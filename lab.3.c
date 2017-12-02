@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     char str[1024];
     char *p;
     char *q;
-    int i=1;
+    char i=1;
     int a = 0;
 
     if(file == NULL)
