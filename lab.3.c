@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 int main(int argc, char *argv[])
 {
     FILE *file;
@@ -21,10 +22,13 @@ int main(int argc, char *argv[])
     	while(!feof(file))
     	{
         	fgets(str, 1024, file);
-        	q=str;
-        	while((p=strstr(q,argv[2]))!=NULL)
+        	q = str;
+        	printf("%s", str);
+        	while((p=strstr(q, argv[2]))!=NULL)
         	{
-            	printf("%d:%d %s\n", i,p-str+1,argv[2]);
+        	    long int pos;
+        	    pos = p-str+1;
+            	printf("%d:%ld %s\n", i, pos, argv[2]);
             	q=p+1;
             	a++;
         	}
