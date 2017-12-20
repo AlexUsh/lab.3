@@ -4,6 +4,7 @@
 
 int main(int argc, char *argv[])
 {
+    /*Creating variables and file pointer*/
     FILE *file;
     file=fopen(argv[1],"r");
     char str[1024];
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
     char i=1;
     int a = 0;
 
+    /*Check for the existence of the file.*/	
     if(file == NULL)
 	{
 		printf("Can't find the file!");
@@ -19,6 +21,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+	/*File reading*/	
     	while(!feof(file))
     	{
         	fgets(str, 1024, file);
@@ -34,12 +37,13 @@ int main(int argc, char *argv[])
         	}
         	i++;
     	}
-
+        /*Check the file for the text and the existence in it of characters to match*/
     	if(a == 0)
     	{
     		printf("Can't find the substring");
     	}
 	}
+    /*Memory clearing*/	
     fclose(file);
     return 0;
 }
